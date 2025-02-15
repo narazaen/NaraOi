@@ -1,0 +1,102 @@
+  
+        @import url('wght@300;400;600&display=swap">https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-image: url(https://e.top4top.io/p_3333y2td00.jpg);
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        select:focus, input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #dzikirText {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        #counter {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .circle-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        #tasbihButton {
+            background: #ff9800;
+            color: white;
+        }
+        #tasbihButton:active {
+            transform: scale(0.9);
+            background: #f57c00;
+        }
+        #resetButton {
+            background: #d32f2f;
+            color: white;
+        }
+        #resetButton:active {
+            transform: scale(0.9);
+            background: #b71c1c;
+        }
+        @media (max-width: 400px) {
+            .circle-button {
+                width: 70px;
+                height: 70px;
+                font-size: 16px;
+            }
+        }
+    
