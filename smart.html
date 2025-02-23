@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+  <title>Toko Online Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+   background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+  background-image: url(https://i.ibb.co.com/93c03F6G/1740305632668.jpg);
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  font-size: 30px;
+  background-color: grey;
+  border-radius: 20px;
+}
+
+.product img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.price {
+  color: black;
+}
+
+#total {
+  color: white;
+  font-weight: bold;
+}
+
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-size : 25px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.cart-item button {
+  margin: 0 5px;
+  font-size : 25px;
+}
+.fixed-scroll-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 550px; 
+    background-color: black;
+    overflow-y: auto; 
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 100;    
+    color: white;
+  }
+
+  .fixed-scroll-box p {
+    margin: 1px 0;
+  }
+.takot {
+    position: fixed;
+    top: 550px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 100;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }  
+    .form-container {
+    display: flex; /* Menggunakan flexbox untuk tata letak horizontal */
+    align-items: center; /* Mengatur elemen secara vertikal di tengah */
+  }
+
+  .form-container label {
+    margin-right: 10px; /* Jarak antara label dan input */
+  }
+
+  .form-container input,
+  .form-container textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px; /* Jarak antar input/textarea */
+  }
+  .data{
+    position: fixed;
+    top: 620px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: blue;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 100;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }  
+  
+ .content {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(https://i.ibb.co.com/8gbtJDRQ/Photoroom-20250223-174327-1.png);
+  padding: 20px;
+  width: 550px;
+  height: 400px;
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  cursor: pointer;
+  font-size: 30px;
+  background-color: black;  
+}
+ .add-to-cart{
+  width: 250px;
+  height: 70px;
+  font-size: 20px;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+}
+.blinkButton {
+  position: fixed;
+  top: 450px;
+  right: 30px;
+  padding: 10px 20px;
+  font-size: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 150;
+  animation: blink 0.3s linear infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.h2{
+font-size: 50px;
+color: white;
+font-weight: bold;
+}
+.p{ 
+font-size: 50px;
+color: white;
+width: 200 px;
+border-radius: 50%;
+background-color: green;
+}
+</style>
+</head>
+<body>
+<div class="fixed-scroll-box">
+<h2 class="h2">Keranjang Belanja 🛒</h2>
+  <div id="cart"></div>
+  <div class="takot">
+  <p>Total: <span id="total">0</span>K</p></div>
+</div>
+
+<img src="https://i.ibb.co.com/VsWsNdw/Photoroom-20250223-221752-1.png" alt="Photoroom-20250223-221752-1" border="0">
+<br><br><br><br><br>
+  <div class="product" data-name="𝐃𝐎𝐌𝐀𝐈𝐍" data-price="10" data-image="https://i.ibb.co.com/gZXWY15/Photoroom-20250112-032327.png">
+    <img src="https://i.ibb.co.com/gZXWY15/Photoroom-20250112-032327.png" alt="A">
+    <h2>𝐃𝐎𝐌𝐀𝐈𝐍</h2>
+    <p class="price">Harga: Rp 10K</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="product" data-name="𝐕𝐏𝐒-𝐇𝐎𝐒𝐓𝐈𝐍𝐆" data-price="15" data-image="https://i.ibb.co.com/2WgRrYm/Photoroom-20250112-032350.png">
+    <img src="https://i.ibb.co.com/2WgRrYm/Photoroom-20250112-032350.png" alt="B">
+    <h2>𝐕𝐏𝐒 𝐇𝐎𝐒𝐓𝐈𝐍𝐆</h2>
+    <p class="price">Harga: Rp 15K</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div><br>
+<div class="product" data-name="𝐏𝐀𝐍𝐄𝐋-𝐏𝐓𝐄𝐑𝐎𝐃𝐀𝐂𝐓𝐘𝐋" data-price="15" data-image="https://i.ibb.co.com/QpG2TpL/Photoroom-20250112-032434.png">
+    <img src="https://i.ibb.co.com/QpG2TpL/Photoroom-20250112-032434.png" alt="d">
+    <h2>𝐏𝐀𝐍𝐄𝐋</h2>
+    <p class="price">Harga: Rp 30k</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="product" data-name="𝐊𝐔𝐑𝐒𝐔𝐒-𝐂𝐎𝐃𝐈𝐍𝐆" data-price="100" data-price="10" data-image="https://i.ibb.co.com/3FpWKvL/Photoroom-20250113-020105.png">
+    <img src="https://i.ibb.co.com/3FpWKvL/Photoroom-20250113-020105.png" alt="A">
+    <h2>𝐊𝐔𝐑𝐒𝐔𝐒 𝐂𝐎𝐃𝐈𝐍𝐆</h2>
+    <p class="price">Harga: Rp 100k</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div>
+  <div class="product" data-name="𝐒𝐂𝐑𝐈𝐏𝐓-𝐁𝐎𝐓-𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏" data-price="15" data-image="https://i.ibb.co.com/fny0y54/Photoroom-20250113-014945.png">
+    <img src="https://i.ibb.co.com/fny0y54/Photoroom-20250113-014945.png" alt="B">
+    <h2>𝐒𝐂𝐑𝐈𝐏𝐓 𝐁𝐎𝐓</h2>
+    <p class="price">Harga: Rp 10k</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div>
+
+  <div class="product" data-name="𝐒𝐂𝐑𝐈𝐏𝐓-𝐒𝐓𝐎𝐑𝐄-𝐇𝐓𝐌𝐋" data-price="13" data-image="https://i.ibb.co.com/vxZFdXV/Photoroom-20250113-020245.png">
+    <img src="https://i.ibb.co.com/vxZFdXV/Photoroom-20250113-020245.png" alt="B">
+    <h2>𝐒𝐂𝐑𝐈𝐏𝐓 𝐒𝐓𝐎𝐑𝐄</h2>
+    <p class="price">Harga: Rp 13k</p>
+    <button class="add-to-cart">Tambah ke Keranjang</button>
+  </div><br>
+<button class="blinkButton" id="myButton">ChekOut</button>
+
+
+
+  
+<div class="data">
+  <form class="form-container" id="order-form">
+    <label for="name">Nama:</label><br>
+    <input type="text" id="name" name="name" required>    
+    <label for="phone">Whatsapp:</label><br>
+    <input type="text" id="phone" pattern="62[0-9]+" title="Harus diawali dengan 62 dan diikuti angka contoh : 62895xxxxxxxx" name="phone" required>
+    <label for="address">Alamat:</label><br>
+    <textarea id="address" name="address" required></textarea></div>
+<div id="myContent" class="content">
+<div class="content-header">
+   <span class="close-button">❌️</span>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><center>
+  <button class="p" type="submit">OK</button></center>
+</div>
+</div>  
+    
+
+  </form>
+ <script src="https://narazaen.github.io/NaraOi/smart2.js"></script><script src="https://narazaen.github.io/NaraOi/smar1.js"></script></body></html>
+
+
+
+
