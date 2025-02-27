@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://b.top4top.io/p_3345niw4y0.png);
+    background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+height: 100%;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+section {
+    background-color: black;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 20px;
+     color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+     color: white;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+     color: white;
+}
+
+select {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    font-size: 16px;
+    border-top: 2px solid white;
+    border-right:0;
+    border-left:0;
+    border-bottom:0;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    outline: none;
+    right:0;
+    background-color: black;
+}
+
+#tuntunan-solat {
+    padding: 20px;
+}
+#bacaan-solat {
+    font-size: 16px;
+    margin-bottom: 10px;
+     color: white;
+}
+
+#langkah-solat {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#langkah-solat li {
+    margin-bottom: 10px;
+}
+        h1, h2 {
+            color: grey;
+        }
+        .solat-step {
+            margin-bottom: 20px;
+            padding: 3px;
+            border: none;
+            border-radius: 5px;
+             color: white;
+        }
+p {
+color: grey;
+font-size: 10px;
+}        
+p9{
+color: green;
+}
+</style>
+<body>
+    <main>
+        <section>
+            <select id="niat-solat">
+            <option value="subuh"> 
+            PILIH BACAAN NIAT SOLAT 📥</option>
+                <option value="subuh">Subuh</option>
+                <option value="dzuhur">Dzuhur</option>
+                <option value="ashar">Ashar</option>
+                <option value="maghrib">Maghrib</option>
+                <option value="isya">Isya</option>
+                <option value="jumat">Jumat</option>
+                <option value="tarawih">Tarawih</option>
+                <option value="witir">Witir</option>
+            </select>
+        </section>
+        
+            <p id="bacaan-solat"></p>
+            <ol id="langkah-solat"></ol>
+        </section>
+    </main>
+
+    <script>
+        const niatSolat = document.getElementById('niat-solat');
+        const bacaanSolat = document.getElementById('bacaan-solat');
+        const langkahSolat = document.getElementById('langkah-solat');
+
+        niatSolat.addEventListener('change', () => {
+            const niat = niatSolat.value;
+            switch (niat) {
+                case 'subuh':
+                    bacaanSolat.textContent = 'Niat solat Subuh';
+                    langkahSolat.innerHTML = `
+                        <body>
+    <section class="solat-step">
+        <h2>1. Niat Solat Subuh</h2>
+        <p>Niat solat Subuh dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha subhi rak'ataini mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Subuh dua rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah</h2>
+        <p>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ. الرَّحْمٰنِ الرَّحِيْمِ. مٰلِكِ يَوْمِ الدِّيْنِ. اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ. اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ. صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ.</p>
+        <p9><em>"Bismillāhir-raḥmānir-raḥīm. Alḥamdu lillāhi rabbil-'ālamīn. Ar-raḥmānir-raḥīm. Māliki yaumid-dīn. Iyyāka na'budu wa iyyāka nasta'īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-lażīna an'amta 'alaihim ghairil-maghḍūbi 'alaihim wa laḍ-ḍāllīn."</em></p9>
+        <p>(Dengan nama Allah, Yang Maha Pemurah, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam, Yang Maha Pemurah, Maha Penyayang, Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ
+    اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Doa Qunut (Sunnah)</h2>
+        <p>Pada rakaat kedua solat Subuh, disunahkan membaca doa Qunut setelah I'tidal. Doa Qunut dibaca dengan mengangkat kedua tangan.</p>
+        <p>Contoh Doa Qunut:</p>
+        <p>اَللّٰهُمَّ اهْدِنِيْ فِيْمَنْ هَدَيْتَ، وَعَافِنِيْ فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِيْ فِيْمَنْ تَوَلَّيْتَ، وَبَارِكْ لِيْ فِيْمَا اَعْطَيْتَ، وَقِنِيْ شَرَّ مَا قَضَيْتَ، فَاِنَّكَ تَقْضِيْ وَلَا يُقْضٰى عَلَيْكَ، وَاِنَّهٗ لَا يَذِلُّ مَنْ وَالَيْتَ، وَلَا يَعِزُّ مَنْ عَادَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ فَلَكَ الْحَمْدُ عَلٰى مَا قَضَيْتَ، اَسْتَغْفِرُكَ وَاَتُوْبُ اِلَيْكَ، وَصَلَّى اللّٰهُ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِهِ وَصَحْبِهِ وَسَلَّمَ.</p>
+        <p9><em>"Allāhummahdinī fīman hadait, wa 'āfinī fīman 'āfait, wa tawallanī fīman tawallait, wa bārik lī fīmā a'thait, wa qinī syarra mā qaḍait, fa innaka taqḍī wa lā yuqḍā 'alaik, wa innahū lā yażillu man wālait, wa lā ya'izzu man 'ādait, tabārakta rabbanā wa ta'ālait, falakal-ḥamdu 'alā mā qaḍait, astagfiruka wa atūbu ilaik, wa ṣallallāhu 'alā sayyidinā muḥammadin wa 'alā ālihī wa ṣaḥbihī wa sallam."</em></p9>
+        <p>(Ya Allah, berilah aku petunjuk seperti orang-orang yang telah Engkau beri petunjuk, berilah aku kesehatan seperti orang-orang yang telah Engkau beri kesehatan, peliharalah aku seperti orang-orang yang telah Engkau pelihara, berilah aku keberkahan dalam segala hal yang telah Engkau berikan, dan peliharalah aku dari keburukan yang telah Engkau tetapkan. Sesungguhnya Engkau yang menetapkan dan tidak ada yang dapat menetapkan atas-Mu. Sesungguhnya tidak akan hina orang yang telah Engkau lindungi, dan tidak akan mulia orang yang telah Engkau musuhi. Maha Suci Engkau, wahai Tuhan kami, dan Maha Tinggi Engkau. Segala puji bagi-Mu atas segala yang telah Engkau tetapkan. Aku memohon ampunan dan bertaubat kepada-Mu. Semoga Allah melimpahkan shalawat dan salam kepada junjungan kami Nabi Muhammad, keluarga, dan para sahabatnya.)</p><br><br><br>
+    </section>
+                    `;
+                    break;
+                case 'dzuhur':
+                    bacaanSolat.textContent = 'Niat solat Dzuhur';
+                    langkahSolat.innerHTML = `
+    <section class="solat-step">
+        <h2>1. Niat Solat Dzuhur</h2>
+        <p>Niat solat Dzuhur dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha zhuhri arba'a raka'atin mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Dzuhur empat rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p><em>"Allāhu akbar"</em></p>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah</h2>
+        <p>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ. الرَّحْمٰنِ الرَّحِيْمِ. مٰلِكِ يَوْمِ الدِّيْنِ. اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ. اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ. صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ.</p>
+        <p9><em>"Bismillāhir-raḥmānir-raḥīm. Alḥamdu lillāhi rabbil-'ālamīn. Ar-raḥmānir-raḥīm. Māliki yaumid-dīn. Iyyāka na'budu wa iyyāka nasta'īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-lażīna an'amta 'alaihim ghairil-maghḍūbi 'alaihim wa laḍ-ḍāllīn."</em></p9>
+        <p>(Dengan nama Allah, Yang Maha Pemurah, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam, Yang Maha Pemurah, Maha Penyayang, Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Tahiyat Awal</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Rakaat Ketiga dan Keempat</h2>
+        <p>Bangkit untuk rakaat ketiga dan keempat, ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>14. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p><br><br><br>
+    </section>
+                    `;
+                    break;
+                case 'ashar':
+                    bacaanSolat.textContent = 'Niat solat Ashar';
+                    langkahSolat.innerHTML = `
+                            <section class="solat-step">
+        <h2>1. Niat Solat Ashar</h2>
+        <p>Niat solat Ashar dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الْعَصْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha 'asri arba'a raka'atin mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Ashar empat rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah</h2>
+        <p>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ. الرَّحْمٰنِ الرَّحِيْمِ. مٰلِكِ يَوْمِ الدِّيْنِ. اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ. اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ. صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ.</p>
+        <p9><em>"Bismillāhir-raḥmānir-raḥīm. Alḥamdu lillāhi rabbil-'ālamīn. Ar-raḥmānir-raḥīm. Māliki yaumid-dīn. Iyyāka na'budu wa iyyāka nasta'īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-lażīna an'amta 'alaihim ghairil-maghḍūbi 'alaihim wa laḍ-ḍāllīn."</em></p9>
+        <p>(Dengan nama Allah, Yang Maha Pemurah, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam, Yang Maha Pemurah, Maha Penyayang, Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+    <section class="solat-step">
+        <h2>11. Tahiyat Awal</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Rakaat Ketiga dan Keempat</h2>
+        <p>Bangkit untuk rakaat ketiga dan keempat, ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>14. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p><br><br><br>
+    </section>
+                    `;
+                    break;
+                case 'maghrib':
+                    bacaanSolat.textContent = 'Niat solat Maghrib';
+                    langkahSolat.innerHTML = `
+    <section class="solat-step">
+        <h2>1. Niat Solat Maghrib</h2>
+        <p>Niat solat Maghrib dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الْمَغْرِبِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha maghribi tsalāsa raka'ātin mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Maghrib tiga rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah</h2>
+        <p>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ. الرَّحْمٰنِ الرَّحِيْمِ. مٰلِكِ يَوْمِ الدِّيْنِ. اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ. اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ. صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ.</p>
+        <p9><em>"Bismillāhir-raḥmānir-raḥīm. Alḥamdu lillāhi rabbil-'ālamīn. Ar-raḥmānir-raḥīm. Māliki yaumid-dīn. Iyyāka na'budu wa iyyāka nasta'īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-lażīna an'amta 'alaihim ghairil-maghḍūbi 'alaihim wa laḍ-ḍāllīn."</em></p9>
+        <p>(Dengan nama Allah, Yang Maha Pemurah, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam, Yang Maha Pemurah, Maha Penyayang, Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Tahiyat Awal</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ
+    اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Rakaat Ketiga</h2>
+        <p>Bangkit untuk rakaat ketiga, ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>14. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p><br><br><br>
+    </section>
+
+
+
+
+
+`;
+                    break;
+                case 'isya':
+                    bacaanSolat.textContent = 'Niat solat isya';
+                    langkahSolat.innerHTML = `
+
+    <section class="solat-step">
+        <h2>1. Niat Solat Isya</h2>
+        <p>Niat solat Isya dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الْعِشَاءِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha 'isyā'i arba'a raka'ātin mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Isya empat rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah</h2>
+        <p>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ. اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ. الرَّحْمٰنِ الرَّحِيْمِ. مٰلِكِ يَوْمِ الدِّيْنِ. اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ. اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ. صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ.</p>
+        <p9><em>"Bismillāhir-raḥmānir-raḥīm. Alḥamdu lillāhi rabbil-'ālamīn. Ar-raḥmānir-raḥīm. Māliki yaumid-dīn. Iyyāka na'budu wa iyyāka nasta'īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-lażīna an'amta 'alaihim ghairil-maghḍūbi 'alaihim wa laḍ-ḍāllīn."</em></p9>
+        <p>(Dengan nama Allah, Yang Maha Pemurah, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam, Yang Maha Pemurah, Maha Penyayang, Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Tahiyat Awal</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ
+    اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Rakaat Ketiga dan Keempat</h2>
+        <p>Bangkit untuk rakaat ketiga dan keempat, ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ 
+اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>14. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p><br><br><br>
+    </section>
+
+
+                   `;
+                    break;
+                case 'jumat':
+                    bacaanSolat.textContent = 'Niat solat Jumat MAKMUM' ;
+                    langkahSolat.innerHTML = `
+                       
+
+    <section class="solat-step">
+        <h2>1. Niat Solat Jumat (Makmum)</h2>
+        <p>Niat solat Jumat sebagai makmum dilakukan dalam hati sebelum takbiratul ihram:</p>
+        <p>أُصَلِّي فَرْضَ الْجُمُعَةِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli fardha jum'ati rak'ataini mustaqbilal qiblati ma'mūman lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat fardu Jumat dua rakaat menghadap kiblat sebagai makmum kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Mendengarkan Khutbah</h2>
+        <p>Sebelum solat dimulai, dengarkan khutbah dengan seksama dan khusyuk.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Mengikuti Imam</h2>
+        <p>Ikuti setiap gerakan imam dalam solat Jumat.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Mendengarkan Bacaan Imam</h2>
+        <p9>Dengarkan bacaan imam dengan seksama, terutama saat membaca Al-Fatihah dan surat-surat pendek.</p9>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Mengucapkan Amin</h2>
+        <p9>Ucapkan "Amin" setelah imam selesai membaca Al-Fatihah.</p9>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Salam Bersama Imam</h2>
+        <p9>Ucapkan salam bersama imam pada akhir solat.</p9><br><br><br>
+    </section>
+                    `;         
+                    break;
+                case 'tarawih':
+                    bacaanSolat.textContent = 'Niat solat Tarawih';
+                    langkahSolat.innerHTML = `
+                      <body>
+   
+    <section class="solat-step">
+        <h2>1. Niat Solat Tarawih</h2>
+        <p>Niat solat Tarawih dilakukan dalam hati sebelum takbiratul ihram. Contoh niat:</p>
+        <p>أُصَلِّي سُنَّةَ التَّرَاوِيْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli sunnatat tarāwīhi rak'ataini mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat sunah Tarawih dua rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah dan Surat Pendek</h2>
+        <p9>Membaca Al-Fatihah dan surat pendek dalam setiap rakaat.</p9>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Rakaat Kedua</h2>
+        <p>Ulangi langkah 3 hingga 9.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ
+    اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Mengulangi Rakaat</h2>
+        <p>Solat Tarawih biasanya dilakukan dalam 8 atau 20 rakaat, dengan setiap dua rakaat diakhiri dengan salam. Ulangi langkah 1 hingga 12 sesuai dengan jumlah rakaat yang diinginkan.</p><br><br><br>
+    </section>
+                    `;
+                    break;
+                case 'witir':
+                    bacaanSolat.textContent = 'Niat solat Witir';
+                    langkahSolat.innerHTML = `
+
+    <section class="solat-step">
+        <h2>1. Niat Solat Witir</h2>
+        <p>Niat solat Witir dilakukan dalam hati sebelum takbiratul ihram. Contoh niat solat Witir 3 rakaat:</p>
+        <p>أُصَلِّي سُنَّةَ الْوِتْرِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli sunnatal witri thalātha raka'ātin mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p9>
+        <p>(Sahaja aku solat sunah Witir tiga rakaat menghadap kiblat tunai kerana Allah Ta'ala)</p>
+        <p>Atau jika 1 rakaat</p>
+        <p>أُصَلِّي سُنَّةَ الْوِتْرِ رَكْعَةً مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى</p>
+        <p9><em>"Ushalli sunnatal witri rak'atan mustaqbilal qiblati adā'an lillāhi ta'ālā"</em></p>
+        <p>(Sahaja aku solat sunah Witir satu rakaat menghadap kiblat tunai karena Allah Ta'ala)</p9>
+    </section>
+
+    <section class="solat-step">
+        <h2>2. Takbiratul Ihram</h2>
+        <p>Mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>اللهُ أَكْبَرُ</p>
+        <p9><em>"Allāhu akbar"</em></p9>
+        <p>(Allah Maha Besar)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>3. Iftitah</h2>
+        <p>اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا</p>
+<p>إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ</p>
+<p>إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+<p>لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ</p>
+
+<p9><em>Allahu akbar kabiraa, walhamdulillahi katsiiraa, wa subhaanallahi bukratan wa asiilaa. Inni wajjahtu wajhiya lilladzi fatharas samaawaati wal ardha haniifan musliman wa maa anaa minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillahi rabbil 'aalamiin. Laa syariikalahu wa bidzaalika umirtu wa anaa minal muslimiin.</em></p9>
+
+<p>Artinya: "Allah Maha Besar lagi sempurna kebesarannya, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah pada pagi dan petang hari. Sesungguhnya aku hadapkan wajahku kepada (Allah) yang menciptakan langit dan bumi dengan cenderung kepada agama yang benar, dan aku bukanlah termasuk orang-orang yang mempersekutukan Tuhan. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya dan dengan yang demikian itulah aku diperintahkan dan aku termasuk orang-orang yang berserah diri (muslim)."</p>
+
+    </section>
+    </section>
+
+    <section class="solat-step">
+        <h2>4. Membaca Al-Fatihah dan Surat Pendek</h2>
+        <p9>Membaca Al-Fatihah dan surat pendek dalam setiap rakaat.</p9>
+    </section>
+
+    <section class="solat-step">
+        <h2>5. Rukuk</h2>
+        <p>Membungkukkan badan dengan kedua tangan memegang lutut, punggung dan kepala sejajar.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-'aẓīmi wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Agung dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>6. Iktidal</h2>
+        <p>Bangkit dari rukuk dengan mengangkat kedua tangan sejajar telinga sambil mengucapkan:</p>
+        <p>سَمِعَ اللّٰهُ لِمَنْ حَمِدَهُ</p>
+        <p9><em>"Sami'allāhu liman ḥamidah"</em></p9>
+        <p>(Allah mendengar orang yang memuji-Nya)</p>
+        <p>Kemudian, setelah berdiri tegak, membaca:</p>
+        <p>رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ</p>
+        <p9><em>"Rabbanā lakal-ḥamdu mil'as-samāwāti wa mil'al-arḍi wa mil'a mā syi'ta min syai'in ba'du"</em></p9>
+        <p>(Ya Tuhan kami, bagi-Mu segala puji, sepenuh langit dan sepenuh bumi dan sepenuh apa yang Engkau kehendaki sesudah itu)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>7. Sujud</h2>
+        <p>Meletakkan dahi, hidung, kedua telapak tangan, lutut, dan ujung kaki di lantai.</p>
+        <p>Membaca:</p>
+        <p>سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</p>
+        <p9><em>"Subḥāna rabbiyal-a'lā wa biḥamdih"</em></p9>
+        <p>(Maha Suci Tuhanku Yang Maha Tinggi dan segala puji bagi-Nya)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>8. Duduk di Antara Dua Sujud</h2>
+        <p>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي</p>
+        <p9><em>"Rabbi ghfir lī warḥamnī wajburnī warzuqnī wahdinī wa 'āfinī wa'fu 'annī"</em></p9>
+        <p>(Ya Tuhanku, ampunilah aku, kasihanilah aku, cukupkanlah aku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>9. Sujud Kedua</h2>
+        <p>Sama seperti sujud pertama.</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>10. Tahiyat Akhir</h2>
+        <p>Duduk tawarruk (duduk dengan kaki kiri di bawah kaki kanan, kaki kanan ditegakkan).</p>
+        <p>Membaca:</p>
+        <p>التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلّٰهِ ۚ اَلسَّلَامُ عَلَيْكَ اَيُّهَا النَّبِيُّ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهٗ ۚ اَلسَّلَامُ عَلَيْنَا وَعَلٰى عِبَادِ اللّٰهِ الصّٰلِحِيْنَ
+    اَشْهَدُ اَنْ لَّآ اِلٰهَ اِلَّا اللّٰهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا رَّسُوْلُ اللّٰهِ. اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيْمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيْمَ فِيْ الْعٰلَمِيْنَ اِنَّكَ حَمِيْدٌ مَّجِيْدٌ.</p>
+        <p9><em>"At-taḥiyyātu l-mubārakātu ṣ-ṣalawātu ṭ-ṭayyibātu lillāh. As-salāmu 'alayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh. As-salāmu 'alaynā wa 'alā 'ibādillāhi ṣ-ṣāliḥīn. Asyhadu an lā ilāha illallāh, wa asyhadu anna muḥammadan rasūlullāh. Allāhumma ṣalli 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā ṣallayta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, wa bārik 'alā sayyidinā muḥammad wa 'alā āli sayyidinā muḥammad, kamā bārakta 'alā sayyidinā ibrāhīma wa 'alā āli sayyidinā ibrāhīm, fil-'ālamīna innaka ḥamīdum majīd."</em></p9>
+        <p>(Segala penghormatan, keberkahan, shalawat, dan kebaikan hanya milik Allah. Semoga keselamatan tercurah kepadamu, wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan shalawat kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim. Dan limpahkanlah berkah kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau limpahkan berkah kepada junjungan kami Nabi Ibrahim dan kepada keluarga junjungan kami Nabi Ibrahim di seluruh alam. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>11. Salam</h2>
+        <p>Menoleh ke kanan dan ke kiri sambil mengucapkan:</p>
+        <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ</p>
+        <p9><em>"As-salāmu 'alaykum wa raḥmatullāh"</em></p9>
+        <p>(Semoga keselamatan dan rahmat Allah tercurah kepada kalian)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>12. Doa Qunut (Opsional)</h2>
+        <p>Pada rakaat terakhir solat Witir, disunahkan membaca doa Qunut setelah I'tidal. Doa Qunut dibaca dengan mengangkat kedua tangan.</p>
+        <p>Contoh Doa Qunut:</p>
+        <p>اَللّٰهُمَّ اهْدِنِيْ فِيْمَنْ هَدَيْتَ، وَعَافِنِيْ فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِيْ فِيْمَنْ تَوَلَّيْتَ، وَبَارِكْ لِيْ فِيْمَا اَعْطَيْتَ، وَقِنِيْ شَرَّ مَا قَضَيْتَ، فَاِنَّكَ تَقْضِيْ وَلَا يُقْضٰى عَلَيْكَ، وَاِنَّهٗ لَا يَذِلُّ مَنْ وَالَيْتَ، وَلَا يَعِزُّ مَنْ عَادَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ فَلَكَ الْحَمْدُ عَلٰى مَا قَضَيْتَ، اَسْتَغْفِرُكَ وَاَتُوْبُ اِلَيْكَ، وَصَلَّى اللّٰهُ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِهِ وَصَحْبِهِ وَسَلَّمَ.</p>
+        <p9><em>"Allāhummahdinī fīman hadait, wa 'āfinī fīman 'āfait, wa tawallanī fīman tawallait, wa bārik lī fīmā a'thait, wa qinī syarra mā qaḍait, fa innaka taqḍī wa lā yuqḍā 'alaik, wa innahū lā yażillu man wālait, wa lā ya'izzu man 'ādait, tabārakta rabbanā wa ta'ālait, falakal-ḥamdu 'alā mā qaḍait, astagfiruka wa atūbu ilaik, wa ṣallallāhu 'alā sayyidinā muḥammadin wa 'alā ālihī wa ṣaḥbihī wa sallam."</em></p9>
+        <p>(Ya Allah, berilah aku petunjuk seperti orang-orang yang telah Engkau beri petunjuk, berilah aku kesehatan seperti orang-orang yang telah Engkau beri kesehatan, peliharalah aku seperti orang-orang yang telah Engkau pelihara, berilah aku keberkahan dalam segala hal yang telah Engkau berikan, dan peliharalah aku dari keburukan yang telah Engkau tetapkan. Sesungguhnya Engkau yang menetapkan dan tidak ada yang dapat menetapkan atas-Mu. Sesungguhnya tidak akan hina orang yang telah Engkau lindungi, dan tidak akan mulia orang yang telah Engkau musuhi. Maha Suci Engkau, wahai Tuhan kami, dan Maha Tinggi Engkau. Segala puji bagi-Mu atas segala yang telah Engkau tetapkan. Aku memohon ampunan dan bertaubat kepada-Mu. Semoga Allah melimpahkan shalawat dan salam kepada junjungan kami Nabi Muhammad, keluarga, dan para sahabatnya.)</p>
+    </section>
+
+    <section class="solat-step">
+        <h2>13. Jumlah Rakaat</h2>
+        <p>Solat Witir dapat dilakukan sebanyak 1, 3, 5, 7, 9, atau 11 rakaat. Jika 3 rakaat, dapat dilakukan dengan 2 rakaat salam, dan 1 rakaat salam. Atau 3 rakaat dengan 1 tahiyyat akhir.</p><br><br><br>
+    </section>
+                    `;
+                    break;
+                default:
+                    bacaanSolat.textContent = '';
+                    langkahSolat.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
